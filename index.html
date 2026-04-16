@@ -385,7 +385,7 @@
                     <p class="text-[10px] text-accent tracking-wide uppercase font-semibold">Online</p>
                 </div>
             </div>
-            <button onclick="toggleChat()" class="text-gray-400 hover:text-white transition-colors p-3 -mr-3 touch-manipulation">
+            <button id="close-chat-btn" class="text-gray-400 p-4 -mr-4 outline-none select-none active:bg-white/10 rounded-full cursor-pointer">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
         </div>
@@ -503,6 +503,15 @@
             } else {
                 chatWindow.classList.add('opacity-0', 'pointer-events-none', 'scale-95', 'translate-y-4');
             }
+        }
+
+        const closeBtn = document.getElementById('close-chat-btn');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', toggleChat);
+            closeBtn.addEventListener('touchstart', (e) => {
+                e.preventDefault();
+                toggleChat();
+            }, {passive: false});
         }
 
         // Basic AI Knowledge Base
