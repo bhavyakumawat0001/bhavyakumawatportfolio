@@ -385,8 +385,8 @@
                     <p class="text-[10px] text-accent tracking-wide uppercase font-semibold">Online</p>
                 </div>
             </div>
-            <button onclick="toggleChat()" class="text-gray-400 hover:text-white transition-colors">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            <button onclick="toggleChat()" class="text-gray-400 hover:text-white transition-colors p-3 -mr-3 touch-manipulation">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
         </div>
         
@@ -500,7 +500,6 @@
             chatOpen = !chatOpen;
             if(chatOpen) {
                 chatWindow.classList.remove('opacity-0', 'pointer-events-none', 'scale-95', 'translate-y-4');
-                setTimeout(() => chatInput.focus(), 300);
             } else {
                 chatWindow.classList.add('opacity-0', 'pointer-events-none', 'scale-95', 'translate-y-4');
             }
